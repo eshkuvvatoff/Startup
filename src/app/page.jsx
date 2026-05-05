@@ -7,7 +7,7 @@ export default function Home() {
         <div>
             <h1>MAIN PAGE CODE + </h1>
             {/* <Matchs /> */}
-            {/* <PersonalityTest/> */}
+            <PersonalityTest/>
             {/* <Notification /> */}
         </div>
     )
