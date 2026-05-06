@@ -4,9 +4,9 @@ import PersonalityTest from "@/components/quiz";
 
 export default function Home() {
     return (
-        <div>
+        <div className="pt-32">
             <h1>MAIN PAGE CODE + </h1>
-            {/* <Matchs /> */}
+            <Matchs />
             <PersonalityTest/>
             {/* <Notification /> */}
         </div>
