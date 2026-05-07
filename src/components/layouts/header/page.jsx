@@ -47,7 +47,6 @@ export default function Header() {
 
 
   return (
-    // <header data-lenis-prevent  className="fixed top-0 left-0 right-0 z-50 w-full bg-background/30 header-glow backdrop-blur-md border-b border-border px-8 py-4">
     <header
       className="fixed top-0 left-0 right-0 z-50 w-full bg-brand-indigo/25 dark:bg-brand-indigo/10 backdrop-blur-md border-b border-white/10 px-8 py-4 shadow-[0_15px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-15px_rgba(0,0,0,0.6)]"
     >
