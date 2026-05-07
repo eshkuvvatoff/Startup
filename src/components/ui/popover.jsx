@@ -80,6 +80,11 @@ function PopoverDescription({
   );
 }
 
+// ... boshqa eksportlar
+const PopoverClose = PopoverPrimitive.Close // Bu qatorni qo'shing
+
+// export { Popover, PopoverTrigger, PopoverContent,  } // PopoverClose ni bu yerga ham qo'shing
+
 export {
   Popover,
   PopoverAnchor,
@@ -88,4 +93,5 @@ export {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
+  PopoverClose,
 }
