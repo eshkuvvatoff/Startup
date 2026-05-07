@@ -6,7 +6,7 @@ export default function Home() {
         <div className="pt-32">
             <h1>MAIN PAGE CODE + </h1>
             <Matchs />
-            <PersonalityTest/>
+            <PersonalityTest />
         </div>
     )
 }

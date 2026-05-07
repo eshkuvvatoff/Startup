@@ -31,6 +31,7 @@ import {
 
 // import {  } from "@/components/ui/popover"
 import { X } from "lucide-react"
+// import SmoothScroll from "@/components/smooth-scroll"
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
@@ -58,7 +59,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-background/60 backdrop-blur-md border-b-2 border-border/40 px-8 py-4">
+    <header data-lenis-prevent className="fixed top-0 left-0 right-0 z-50 w-full bg-background/60 backdrop-blur-md border-b-2 border-border/40 px-8 py-4">
       <nav className="flex items-center justify-between">
         {/* Logo */}
         <h1 className="font-saira-stencil text-2xl tracking-widest text-foreground cursor-pointer">
@@ -91,7 +92,8 @@ export default function Header() {
               </div>
 
               {/* SCROLLABLE DATA STREAM */}
-              <div className="max-h-[350px] overflow-y-auto scrollbar-hide">
+              <div className="max-h-[350px] overflow-y-auto scrollbar-hide" data-lenis-prevent>
+                {/* <SmoothScroll /> */}
                 {notifications.map((item, i) => (
                   <div
                     key={i}

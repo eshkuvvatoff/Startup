@@ -122,3 +122,27 @@ body {
     box-shadow: 0 0 10px var(--primary);
   }
 }
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #2d298f, #8d1e93);
+    border-radius: 10px;
+  }
+
+  :root:not(.dark) ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #b8007a, #4300b8);
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Softest outline */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8b5cf6 !important; /* Your Purple - works in both modes */
+  }
+}
