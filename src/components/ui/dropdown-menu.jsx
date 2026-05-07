@@ -67,7 +67,7 @@ function DropdownMenuItem({
         // Oq rangga o'zgartiruvchi focus:**:text-accent-foreground olib tashlandi
         "focus:bg-accent focus:text-accent-foreground", 
         // Destructive (Logout) varianti uchun rangni majburlash
-        "data-[variant=destructive]:text-red-500 data-[variant=destructive]:focus:bg-red-500/10 data-[variant=destructive]:focus:text-red-500",
+        "data-[variant=destructive]:text-red-500 data-[variant=destructive]:focus:bg-red-500/20 data-[variant=destructive]:focus:text-red-500",
         className
       )}
       {...props} />

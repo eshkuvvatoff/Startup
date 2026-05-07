@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
+import { useRef } from 'react';
 import {
   BellIcon,
   ShoppingBagIcon,
@@ -31,12 +32,18 @@ import {
 
 // import {  } from "@/components/ui/popover"
 import { X } from "lucide-react"
+import ReactLenis from "@studio-freight/react-lenis"
 // import SmoothScroll from "@/components/smooth-scroll"
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
+
+  const scrollRef = useRef(null);
+  const velocity = useRef(0);
+  const requestRef = useRef(null);
+  
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -46,7 +53,11 @@ export default function Header() {
   const profileImage = null
 
   // Hover uchun umumiy class
-  const itemStyle = "flex flex-col items-center justify-center p-4 cursor-pointer rounded-md focus:bg-accent focus:text-accent-foreground"
+  const itemStyle = "group flex flex-col items-center justify-center p-4 cursor-pointer rounded-md transition-all duration-200 hover:bg-primary/10 hover:scale-105 outline-none"
+
+
+
+
 
   const notifications = [
     { name: "Jordan P.", msg: "requested to follow", time: "2m", unread: true, initials: "JP", color: "from-[#6366f1] to-[#a855f7]" },
@@ -56,8 +67,44 @@ export default function Header() {
     { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
     { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
     { name: "Morgan L.", msg: "personality match", time: "5h", unread: false, initials: "ML", color: "from-[#10b981] to-[#0ea5e9]" },
+    { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
+    { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
+    { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
+    { name: "Morgan L.", msg: "personality match", time: "5h", unread: false, initials: "ML", color: "from-[#10b981] to-[#0ea5e9]" },
+    { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
+    { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
+    { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
+    { name: "Morgan L.", msg: "personality match", time: "5h", unread: false, initials: "ML", color: "from-[#10b981] to-[#0ea5e9]" },
+    { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
+    { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
+    { name: "Riley M.", msg: "started following", time: "3h", unread: false, initials: "RM", color: "from-[#0ea5e9] to-[#6366f1]" },
+    { name: "Morgan L.", msg: "personality match", time: "5h", unread: false, initials: "ML", color: "from-[#10b981] to-[#0ea5e9]" },
   ]
 
+  const applySmoothScroll = () => {
+    if (!scrollRef.current) return;
+
+    scrollRef.current.scrollTop += velocity.current;
+    velocity.current *= 0.85; // FRICTION: 0.85 makes it feel very heavy/slow
+
+    if (Math.abs(velocity.current) > 0.1) {
+      requestRef.current = requestAnimationFrame(applySmoothScroll);
+    } else {
+      requestRef.current = null;
+    }
+  };
+
+  const handleInnerWheel = (e) => {
+    // Prevent the main page from moving
+    e.stopPropagation();
+
+    // SENSITIVITY: 0.1 makes the mouse wheel "weaker"
+    velocity.current += e.deltaY * 0.01;
+
+    if (!requestRef.current) {
+      requestRef.current = requestAnimationFrame(applySmoothScroll);
+    }
+  };
   return (
     <header data-lenis-prevent className="fixed top-0 left-0 right-0 z-50 w-full bg-background/60 backdrop-blur-md border-b-2 border-border/40 px-8 py-4">
       <nav className="flex items-center justify-between">
@@ -92,8 +139,12 @@ export default function Header() {
               </div>
 
               {/* SCROLLABLE DATA STREAM */}
-              <div className="max-h-[350px] overflow-y-auto scrollbar-hide" data-lenis-prevent>
-                {/* <SmoothScroll /> */}
+              <div
+                ref={scrollRef}
+                onWheel={handleInnerWheel}
+                className="max-h-[300px] overflow-y-auto scrollbar-hide overscroll-contain"
+                data-lenis-prevent
+              >
                 {notifications.map((item, i) => (
                   <div
                     key={i}
@@ -128,6 +179,7 @@ export default function Header() {
                     </div>
                   </div>
                 ))}
+
               </div>
 
               {/* FIXED FOOTER - YOUR EXACT STYLE */}
@@ -153,47 +205,42 @@ export default function Header() {
               </button>
             </DropdownMenuTrigger>
 
-            <DropdownMenuContent align="end" className="w-44 p-2 border border-border shadow-lg">
+            <DropdownMenuContent align="end" className="w-44 p-2 border border-border shadow-lg bg-background/80 backdrop-blur-md">
+
               <div className="grid grid-cols-2 gap-2">
                 <DropdownMenuItem className={itemStyle}>
-                  <UserRoundIcon size={24} />
+                  <UserRoundIcon size={24} className="transition-colors duration-200 group-hover:text-primary" />
                 </DropdownMenuItem>
-
                 <DropdownMenuItem className={itemStyle}>
-                  <ShoppingBagIcon size={24} />
+                  <ShoppingBagIcon size={24} className="transition-colors duration-200 group-hover:text-primary" />
                 </DropdownMenuItem>
-
                 <DropdownMenuItem className={itemStyle}>
-                  <SettingsIcon size={24} />
+                  <SettingsIcon size={24} className="transition-colors duration-200 group-hover:text-primary" />
                 </DropdownMenuItem>
-
                 <DropdownMenuItem
                   className={itemStyle}
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 >
                   {theme === "dark" ? (
-                    <SunIcon size={24} />
+                    <SunIcon size={24} className="transition-colors duration-200 group-hover:text-yellow-400" />
                   ) : (
-                    <MoonIcon size={24} />
+                    <MoonIcon size={24} className="transition-colors duration-200 group-hover:text-indigo-400" />
                   )}
                 </DropdownMenuItem>
               </div>
-
               <DropdownMenuSeparator className="my-2 bg-border" />
-
+              {/* Logout Item */}
               <DropdownMenuItem
                 variant="destructive"
-                className="flex items-center justify-center p-2 cursor-pointer rounded-md outline-none"
+                className="flex items-center justify-center p-2 cursor-pointer bg-red-500/10 rounded-md outline-none"
               >
                 <LogoutIcon size={20} className="mr-2" />
                 <span className="font-medium">Log out</span>
               </DropdownMenuItem>
-
-
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
       </nav>
-    </header>
+    </header >
   )
 }
