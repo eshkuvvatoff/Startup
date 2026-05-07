@@ -5,7 +5,6 @@ import Footer from "@/components/layouts/footers/page";
 import { cn } from "@/lib/utils";
 import Wrapper from "@/components/wrapper";
 import SmoothScroll from "@/components/smooth-scroll";
-// import SmoothScroll from "@/components/smooth-scroll";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 

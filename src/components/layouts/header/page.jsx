@@ -38,7 +38,7 @@ export default function Header() {
   const profileImage = null
 
   // Hover uchun umumiy class
-  const itemStyle = "group flex flex-col items-center justify-center p-4 cursor-pointer rounded-md transition-all duration-200 hover:bg-primary/10 hover:scale-105 outline-none"
+  const itemStyle = "group flex flex-col items-center justify-center p-4 cursor-pointer rounded-md transition-all duration-200 hover:bg-primary/10 outline-none"
 
 
 
@@ -47,7 +47,14 @@ export default function Header() {
 
 
   return (
-    <header data-lenis-prevent className="fixed top-0 left-0 right-0 z-50 w-full bg-background/60 backdrop-blur-md border-b-2 border-border/40 px-8 py-4">
+    // <header data-lenis-prevent  className="fixed top-0 left-0 right-0 z-50 w-full bg-background/30 header-glow backdrop-blur-md border-b border-border px-8 py-4">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 w-full bg-brand-indigo/25 dark:bg-brand-indigo/10 backdrop-blur-md border-b border-white/10 px-8 py-4 shadow-[0_15px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-15px_rgba(0,0,0,0.6)]"
+    >
+
+
+
+
       <nav className="flex items-center justify-between">
         {/* Logo */}
         <h1 className="font-saira-stencil text-2xl tracking-widest text-foreground cursor-pointer">
@@ -72,26 +79,35 @@ export default function Header() {
               </button>
             </DropdownMenuTrigger>
 
-            <DropdownMenuContent align="end" className="w-44 p-2 border border-border shadow-lg bg-background/80 backdrop-blur-md">
+            {/* <DropdownMenuContent align="end" className="w-44 p-2 border border-border bg-brand-indigo/20 dark:bg-brand-indigo/10 mt-4 backdrop-blur-md shadow-[0_30px_60px_-10px_rgba(58,12,163,0.5),0_15px_10px_-20px_rgba(0,0,0,0.6)]"> */}
+            <DropdownMenuContent
+              align="end"
+              sideOffset={12}
+              className="w-44 p-2 border-b-2 border-border/40 bg-brand-indigo/20 dark:bg-brand-indigo/10 mt-4 backdrop-blur-md shadow-[0_15px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-15px_rgba(0,0,0,0.6)]"
+            >
+
+
+
+
 
               <div className="grid grid-cols-2 gap-2">
                 <DropdownMenuItem className={itemStyle}>
-                  <UserRoundIcon size={24} className="transition-colors duration-200 group-hover:text-primary" />
+                  <UserRoundIcon size={24} className="transition-colors duration-200 group-hover:text-white text-brand-indigo" />
                 </DropdownMenuItem>
                 <DropdownMenuItem className={itemStyle}>
-                  <ShoppingBagIcon size={24} className="transition-colors duration-200 group-hover:text-primary" />
+                  <ShoppingBagIcon size={24} className="transition-colors duration-200 group-hover:text-white text-brand-indigo" />
                 </DropdownMenuItem>
                 <DropdownMenuItem className={itemStyle}>
-                  <SettingsIcon size={24} className="transition-colors duration-200 group-hover:text-primary" />
+                  <SettingsIcon size={24} className="transition-colors duration-200 group-hover:text-white text-brand-indigo" />
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   className={itemStyle}
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 >
                   {theme === "dark" ? (
-                    <SunIcon size={24} className="transition-colors duration-200 group-hover:text-yellow-400" />
+                    <SunIcon size={24} className="text-yellow-400" />
                   ) : (
-                    <MoonIcon size={24} className="transition-colors duration-200 group-hover:text-indigo-400" />
+                    <MoonIcon size={24} className="transition-colors duration-200 group-hover:text-white text-brand-indigo" />
                   )}
                 </DropdownMenuItem>
               </div>

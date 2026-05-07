@@ -21,13 +21,22 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  
+  --color-brand-rose:   #F72585;
+  --color-brand-violet: #7209B7;
+  --color-brand-indigo: #3A0CA3;
+  --color-brand-blue:   #4361EE;
+  --color-brand-cyan:   #4CC9F0;
+  --color-brand-textc:    #a855f7;
+
 
   --radius: 0.9rem;
 }
+
 :root {
   /* LIGHT */
 
-  --background: #fffff;
+  --background: #ffffff;
   --foreground: #173982;
 
   --card: #ffffff;
@@ -50,6 +59,13 @@
 
   --border: #dbe3ff;
   --ring: #6366f1;
+
+  --rose:    #F72585;
+  --violet:  #7209B7;
+  --indigo:  #3A0CA3;
+  --blue:    #4361EE;
+  --cyan:    #4CC9F0;
+  --textc:    #a855f7;
 }
 
 .dark {
@@ -78,6 +94,14 @@
 
   --border: rgba(255,255,255,0.08);
   --ring: #8b5cf6;
+
+
+  --brand-rose:    #F72585;
+  --brand-violet:  #7209B7;
+  --brand-indigo:  #3A0CA3;
+  --brand-blue:    #4361EE;
+  --brand-cyan:    #4CC9F0;
+  --brand-textc:    #a855f7;
 }
 
 
@@ -121,6 +145,16 @@ body {
     background: var(--primary); /* Glows on hover */
     box-shadow: 0 0 10px var(--primary);
   }
+  .header-glow {
+    /* Oq fonda juda mayin soya, qora fonda neon binafsha jilo */
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .header-glow {
+    box-shadow: 
+      0 10px 30px -10px rgba(0, 0, 0, 0.7),
+      0 1px 0 0 rgba(255, 255, 255, 0.05); /* Pastki ingichka chiziq jilosi */
+  }
 }
 
 @layer base {
@@ -146,3 +180,4 @@ body {
     background: #8b5cf6 !important; /* Your Purple - works in both modes */
   }
 }
+

@@ -66,7 +66,7 @@ export default function Notification() {
         <div>
             <Popover>
                 <PopoverTrigger asChild>
-                    <button className="relative cursor-pointer p-2 text-foreground/60 hover:text-foreground transition-colors outline-none">
+                    <button className="relative cursor-pointer p-2 text-brand-indigo transition-colors outline-none">
                         <BellIcon size={22} />
                         <span className="absolute top-2 right-2.5 h-1.5 w-1.5 rounded-full bg-[#a855f7]" />
                     </button>
@@ -74,13 +74,13 @@ export default function Notification() {
 
                 <PopoverContent
                     align="end"
-                    sideOffset={15}
-                    className="w-80 p-5 bg-background/60 backdrop-blur-md border-b-2 border-border/40  rounded-xl shadow-2xl animate-in fade-in zoom-in-95 duration-200"
+                    sideOffset={30}
+                    className="w-80 py-5 px-2 backdrop-blur-md border-b-2 border-border/40 bg-brand-indigo/20 dark:bg-brand-indigo/10 rounded-xl animate-in fade-in zoom-in-95 duration-200 shadow-[0_15px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-15px_rgba(0,0,0,0.6)]"
                 >
-                    <div className="flex justify-between items-center mb-0.5">
-                        <h3 className="text-[11px] font-black uppercase tracking-[0.2em] opacity-60 text-[#a855f7] hover:text-purple-400 dark:text-[#a855f7] cursor-pointer">Notifications</h3>
-                        <PopoverClose className="opacity-20 cursor-pointer hover:opacity-100 transition-opacity">
-                            <X size={16} className="text-white" />
+                    <div className="flex justify-between items-center px-2 mb-0.5">
+                        <h3 className="text-[11px] font-black uppercase tracking-[0.2em] opacity-60 text-brand-textc dark:hover:text-purple-400 hover:text-purple-800 cursor-pointer">Notifications</h3>
+                        <PopoverClose className="cursor-pointer">
+                            <X size={16} className="text-brand-textc dark:hover:text-purple-400 hover:text-purple-800" />
                         </PopoverClose>
                     </div>
 
@@ -93,9 +93,9 @@ export default function Notification() {
                         {notifications.map((item, i) => (
                             <div
                                 key={i}
-                                className="group relative flex items-center gap-4 px-2 py-3 hover:bg-white/[0.03] active:scale-[0.98] transition-all duration-200 cursor-pointer border-b border-white/[0.03] last:border-0"
+                                className="group relative flex items-center px-3 gap-4 py-3 w-74 hover:bg-brand-rose/40 rounded-xl active:scale-[0.98] transition-all duration-200 cursor-pointer border-b border-white/[0.03] last:border-0"
                             >
-                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary/10 to-transparent transition-opacity pointer-events-none" />
+                                {/* <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary/10 to-transparent transition-opacity pointer-events-none" /> */}
 
                                 <div className="relative shrink-0">
                                     <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg ring-1 ring-white/20 overflow-hidden`}>
@@ -111,14 +111,14 @@ export default function Notification() {
 
                                 <div className="flex-1 min-w-0 z-10">
                                     <div className="flex justify-between items-center mb-0.5">
-                                        <span className="text-[13px] font-semibold text-white tracking-wide truncate group-hover:text-primary transition-colors">
+                                        <span className="text-[13px] font-semibold text-brand-indigo dark:text-brand-textc tracking-wide truncate group-hover:text-white/90 transition-colors duration-300">
                                             {item.name}
                                         </span>
-                                        <span className="text-[10px] text-white/30 font-mono tracking-tighter">
+                                        <span className="text-[15px] font-black absolute right-2 bottom-3 text-brand-textc/50 font-mono tracking-tighter">
                                             {item.time}
                                         </span>
                                     </div>
-                                    <p className="text-[12px] text-white/40 leading-tight truncate font-light">
+                                    <p className="text-[12px] dark:text-brand-textc text-brand-indigo leading-tight truncate font-light">
                                         {item.msg}
                                     </p>
                                 </div>
@@ -128,7 +128,7 @@ export default function Notification() {
                     </div>
 
                     {/* FIXED FOOTER - YOUR EXACT STYLE */}
-                    <button className="w-full mt-4 cursor-pointer pt-4 border-t border-white/5 text-[11px] font-bold text-[#a855f7] hover:text-purple-400 transition-colors text-left uppercase tracking-widest">
+                    <button className="w-full  cursor-pointer pt-1 px-2 border-t border-white/5 text-[11px] font-bold text-brand-textc dark:hover:text-purple-400 hover:text-purple-800 transition-colors text-left uppercase tracking-widest">
                         VIEW ALL
                     </button>
                 </PopoverContent>
