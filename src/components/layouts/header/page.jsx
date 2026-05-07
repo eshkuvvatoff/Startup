@@ -83,7 +83,7 @@ export default function Header() {
             <DropdownMenuContent
               align="end"
               sideOffset={12}
-              className="w-44 p-2 border-b-2 border-border/40 bg-brand-indigo/20 dark:bg-brand-indigo/10 mt-4 backdrop-blur-md shadow-[0_15px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-15px_rgba(0,0,0,0.6)]"
+              className="w-44 p-2 border-b-2 border-border/40 bg-brand-indigo/20 dark:bg-brand-indigo/10 mt-4 backdrop-blur-md shadow-[0_15px_30px_-10px_rgba(58,12,163,0.5),0_10px_5px_-15px_rgba(0,0,0,0.6)]"
             >
 
 
