@@ -33,7 +33,7 @@ export default function Header() {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
+  // if (!mounted) return null
 
   const profileImage = null
 
@@ -103,11 +103,11 @@ export default function Header() {
                   className={itemStyle}
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 >
-                  {theme === "dark" ? (
+                  {mounted ? theme === "dark" ? (
                     <SunIcon size={24} className="text-yellow-400" />
                   ) : (
                     <MoonIcon size={24} className="transition-colors duration-200 group-hover:text-white text-brand-indigo" />
-                  )}
+                  ) : <div>notmounted</div> }
                 </DropdownMenuItem>
               </div>
               <DropdownMenuSeparator className="my-2 bg-border" />
