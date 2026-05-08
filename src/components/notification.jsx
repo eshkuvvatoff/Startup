@@ -82,9 +82,9 @@ export default function Notification() {
             data-lenis-prevent
           >
             {notifications.map((item, i) => (
-              <div key={i} className="group relative flex items-center px-4 gap-4 py-3 w-full hover:bg-brand-rose/40 rounded-xl active:scale-[0.98] transition-all duration-200 cursor-pointer border-b border-white/[0.03] last:border-0">
+              <div key={i} className="group relative flex items-center px-4 gap-4 py-3 w-full hover:bg-brand-rose/40 rounded-xl active:scale-[0.98] transition-all duration-200 cursor-pointer border-b border-white/3 last:border-0">
                 <div className="relative shrink-0">
-                  <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg ring-1 ring-white/20 overflow-hidden`}>
+                  <div className={`h-10 w-10 rounded-xl bg-linear-to-br ${item.color} flex items-center justify-center shadow-lg ring-1 ring-white/20 overflow-hidden`}>
                     <span className="text-[11px] font-black text-white uppercase">{item.initials}</span>
                   </div>
                   {item.unread && (

@@ -24,3 +24,17 @@ export default function RootLayout({ children }) {
   );
 
 }
+
+export const metadata = {
+  title: "Persona",
+  description: "Show who you are",
+  icons: {
+    icon: '/Logo.png', 
+    shortcut: '/shortcut-icon.png',
+    apple: '/Logo.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/apple-touch-icon-precomposed.png',
+    },
+  },
+};

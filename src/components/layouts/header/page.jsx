@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 import {
-  // BellIcon,
   ShoppingBagIcon,
   SettingsIcon,
   UserRoundIcon,
@@ -20,9 +19,7 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import Notification from "@/components/notification";
-
-// import {  } from "@/components/ui/popover"
-// import SmoothScroll from "@/components/smooth-scroll"
+import Link from "next/link"
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
@@ -33,11 +30,9 @@ export default function Header() {
     setMounted(true)
   }, [])
 
-  // if (!mounted) return null
 
   const profileImage = null
 
-  // Hover uchun umumiy class
   const itemStyle = "group flex flex-col items-center justify-center p-4 cursor-pointer rounded-md transition-all duration-200 hover:bg-primary/10 outline-none"
 
 
@@ -55,30 +50,27 @@ export default function Header() {
 
 
       <nav className="flex items-center justify-between">
-        {/* Logo */}
-        <h1 className="font-saira-stencil text-2xl tracking-widest text-foreground cursor-pointer">
-          Aletheia
-        </h1>
+        <Link href={"/"} >
+          <h1 className="font-saira-stencil text-2xl tracking-widest text-foreground cursor-pointer">
+            Aletheia
+          </h1>
+        </Link>
 
-        {/* Right Section */}
         <div className="flex items-center gap-4">
-          {/* Notification */}
 
           <Notification />
 
-          {/* Profile Dropdown */}
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
               <button className="h-11 w-11 overflow-hidden rounded-full ring-2 ring-border hover:ring-primary/40 transition cursor-pointer">
                 {profileImage ? (
                   <img src={profileImage} alt="Profile" className="h-full w-full object-cover" />
                 ) : (
-                  <div className="h-full w-full bg-gradient-to-br from-red-500 via-pink-500 to-violet-500" />
+                  <div className="h-full w-full bg-linear-to-br from-red-500 via-pink-500 to-violet-500" />
                 )}
               </button>
             </DropdownMenuTrigger>
 
-            {/* <DropdownMenuContent align="end" className="w-44 p-2 border border-border bg-brand-indigo/20 dark:bg-brand-indigo/10 mt-4 backdrop-blur-md shadow-[0_30px_60px_-10px_rgba(58,12,163,0.5),0_15px_10px_-20px_rgba(0,0,0,0.6)]"> */}
             <DropdownMenuContent
               align="end"
               sideOffset={12}
@@ -107,11 +99,10 @@ export default function Header() {
                     <SunIcon size={24} className="text-yellow-400" />
                   ) : (
                     <MoonIcon size={24} className="transition-colors duration-200 group-hover:text-white text-brand-indigo" />
-                  ) : <div>notmounted</div> }
+                  ) : <div>notmounted</div>}
                 </DropdownMenuItem>
               </div>
               <DropdownMenuSeparator className="my-2 bg-border" />
-              {/* Logout Item */}
               <DropdownMenuItem
                 variant="destructive"
                 className="flex items-center justify-center p-2 cursor-pointer bg-red-500/10 rounded-md outline-none"
