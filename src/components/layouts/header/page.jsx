@@ -52,7 +52,7 @@ export default function Header() {
       <nav className="flex items-center justify-between">
         <Link href={"/"} >
           <h1 className="font-saira-stencil text-2xl tracking-widest text-foreground cursor-pointer">
-            Aletheia
+            Persona
           </h1>
         </Link>
 

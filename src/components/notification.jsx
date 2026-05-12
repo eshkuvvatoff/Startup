@@ -57,7 +57,7 @@ export default function Notification() {
     <div>
       <Popover>
         <PopoverTrigger asChild>
-          <button className="relative cursor-pointer p-2 text-brand-indigo hover:text-brand-textc duration-400 transition-colors outline-none">
+          <button className="relative cursor-pointer p-2 top-2 text-brand-indigo hover:text-brand-textc duration-400 transition-colors outline-none">
             <BellIcon size={22} />
             <span className="absolute top-2 right-2.5 h-1.5 w-1.5 rounded-full bg-brand-textc" />
           </button>
