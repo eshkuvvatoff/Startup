@@ -32,7 +32,7 @@ export default function SignUpPage() {
         <div className="absolute top-1/3 right-1/4 w-[250px] h-[250px] rounded-full bg-brand-rose/10 dark:bg-brand-rose/15 blur-[80px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[420px]">
+      <div className="relative z-10 w-full max-w-[410px]">
 
         {/* Brand */}
         <div className="text-center mb-10">

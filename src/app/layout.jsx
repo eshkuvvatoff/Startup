@@ -5,7 +5,7 @@ import Footer from "@/components/layouts/footers/page";
 import { cn } from "@/lib/utils";
 import Wrapper from "@/components/wrapper";
 import SmoothScroll from "@/components/smooth-scroll";
-import DevToolsBlocker from "@/components/block-devtools";
+// import DevToolsBlocker from "@/components/block-devtools";
 import ContextMenuComponent from "@/components/context-menus/context-menu";
 // import LightPillar from "@/components/lightpillar";
 
@@ -17,13 +17,13 @@ export default function RootLayout({ children }) {
       <body className={cn("font-sans", inter.variable)} suppressHydrationWarning>
         <Wrapper>
           <ContextMenuComponent>
-            <DevToolsBlocker>
+            {/* <DevToolsBlocker> */}
               <SmoothScroll>
                 <Header />
                 <main>{children}</main>
                 <Footer />
               </SmoothScroll>
-            </DevToolsBlocker>
+            {/* </DevToolsBlocker> */}
           </ContextMenuComponent>
         </Wrapper>
       </body>
