@@ -1,6 +1,7 @@
 "use client"
 
 import { ThemeProvider } from "@/components/theme-provider"
+import { LocaleProvider } from "@/contexts/locale-context"
 
 export default function Wrapper({ children }) {
   return (
@@ -9,7 +10,7 @@ export default function Wrapper({ children }) {
       defaultTheme="dark"
       enableSystem={false}
     >
-      {children}
+      <LocaleProvider>{children}</LocaleProvider>
     </ThemeProvider>
   )
 }

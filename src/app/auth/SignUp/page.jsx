@@ -20,7 +20,7 @@ export default function SignUpPage() {
   const submitClass =
     "w-full py-3.5 rounded-xl cursor-pointer font-semibold text-sm text-white transition-all active:scale-[0.98] bg-gradient-to-r from-brand-rose via-brand-violet to-brand-blue shadow-[0_8px_25px_rgba(114,9,183,0.4)] dark:shadow-[0_8px_30px_rgba(114,9,183,0.5),0_0_60px_rgba(67,97,238,0.2)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(114,9,183,0.55)] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center";
   const socialBtn =
-    "group relative flex h-12 items-center justify-center rounded-xl border border-brand-violet/20 bg-brand-violet/5 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-violet/10";
+    "group relative flex h-12 items-center justify-center rounded-xl border border-brand-violet/20 bg-brand-violet/5 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-violet/10 hover:border-[#4285F4]";
 
   return (
     <div className="relative min-h-screen w-full bg-background text-foreground flex items-center justify-center overflow-hidden p-4 transition-colors duration-300">
@@ -51,7 +51,7 @@ export default function SignUpPage() {
         </div>
 
         {/* Card */}
-        <div className="p-px rounded-2xl bg-gradient-to-br from-brand-violet/50 via-brand-blue/30 to-brand-cyan/20 dark:from-brand-violet/60 dark:via-brand-blue/40 dark:to-brand-cyan/30 shadow-[0_0_50px_rgba(114,9,183,0.15)] dark:shadow-[0_0_80px_rgba(114,9,183,0.25),0_30px_60px_rgba(0,0,0,0.5)]">
+        <div className="p-px rounded-2xl bg-gradient-to-br from-brand-violet/50 via-brand-blue/30 to-brand-cyan/20 dark:from-brand-violet/60 dark:via-brand-blue/30 dark:to-brand-cyan/30 shadow-[0_0_50px_rgba(114,9,183,0.15)] dark:shadow-[0_0_80px_rgba(114,9,183,0.25),0_30px_60px_rgba(0,0,0,0.5)]">
           <div className="backdrop-blur-2xl rounded-2xl p-7 bg-white/80 dark:bg-[rgba(10,8,40,0.75)] relative overflow-hidden transition-all duration-300">
 
             <div className="absolute top-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-brand-violet/30 dark:via-white/15 to-transparent" />

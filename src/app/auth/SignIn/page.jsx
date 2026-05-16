@@ -49,7 +49,7 @@ export default function SignInPage() {
         </div>
 
         {/* Card */}
-        <div className="p-px rounded-2xl bg-gradient-to-br from-brand-violet/50 via-brand-blue/30 to-brand-cyan/20 dark:from-brand-violet/60 dark:via-brand-blue/40 dark:to-brand-cyan/30 shadow-[0_0_50px_rgba(114,9,183,0.15)] dark:shadow-[0_0_80px_rgba(114,9,183,0.25),0_30px_60px_rgba(0,0,0,0.5)]">
+        <div className="p-px rounded-2xl bg-gradient-to-br from-brand-violet/50 via-brand-blue/30 to-brand-cyan/20 dark:from-brand-violet/60 dark:via-brand-blue/30 dark:to-brand-cyan/30 shadow-[0_0_50px_rgba(114,9,183,0.15)] dark:shadow-[0_0_80px_rgba(114,9,183,0.25),0_30px_60px_rgba(0,0,0,0.5)]">
           <div className="backdrop-blur-2xl rounded-2xl p-7 bg-white/80 dark:bg-[rgba(10,8,40,0.75)] relative overflow-hidden transition-all duration-300">
 
             {/* Shimmer top */}
