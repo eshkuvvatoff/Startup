@@ -26,25 +26,27 @@ const ContextMenuSubTrigger = React.forwardRef(({ className, inset, children, ..
 ))
 ContextMenuSubTrigger.displayName = ContextMenuPrimitive.SubTrigger.displayName
 
-// TIL SUBSYSTEM: ORTIQCHA SOYASIZ VA SIGN UP BORDERI BILAN
+// 1. TIL SUBSYSTEM (SUB-PANEL): SIZNING SHADOW VA PREMIUM BORDER BILAN YANGILANDI
 const ContextMenuSubContent = React.forwardRef(({ className, ...props }, ref) => (
   <ContextMenuPrimitive.SubContent
     ref={ref}
     className={cn(
-      "z-[10000] min-w-[10rem] h-auto p-1.5 rounded-xl border border-brand-violet/40 dark:border-white/15 bg-white/95 dark:bg-[rgba(10,8,40,0.95)] backdrop-blur-2xl shadow-xl shadow-black/5 dark:shadow-black/30 animate-in fade-in zoom-in-95 duration-150",
+      "z-[10000] min-w-[10rem] h-auto p-2 rounded-xl border border-brand-violet/40 bg-brand-indigo/20  dark:bg-[rgba(10,8,40,0.95)] backdrop-blur-sm animate-in fade-in zoom-in-95 duration-150 " +
+      "shadow-[0_25px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-15px_rgba(0,0,0,0.6)]", // <--- SIZNING SHADOW
       className
     )}
     {...props} />
 ))
 ContextMenuSubContent.displayName = ContextMenuPrimitive.SubContent.displayName
 
-// ASOSIY PANEL: YUMSHOQ SOYA VA PREMIUM DISPLAY
+// 2. ASOSIY PANEL: BORDER VA SIZNING MAXSUS SHADOW EFFEKTINGIZ JOYLASHDI
 const ContextMenuContent = React.forwardRef(({ className, ...props }, ref) => (
   <ContextMenuPrimitive.Portal> 
     <ContextMenuPrimitive.Content
       ref={ref}
       className={cn(
-        "z-[9999] min-w-[16rem] h-auto p-2 rounded-xl border-2 border-brand-violet/40 dark:border-brand-textc/20 bg-white/95 dark:bg-[rgba(10,8,40,0.95)] backdrop-blur-2xl shadow-xl shadow-black/5 dark:shadow-black/30 animate-in fade-in zoom-in-95 duration-150",
+        "z-[9999] min-w-[16rem] h-auto p-2 rounded-xl border border-brand-violet/40 dark:border-brand-textc/20 bg-white/95 dark:bg-[rgba(10,8,40,0.95)] backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-150 " +
+        "shadow-[0_15px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-15px_rgba(0,0,0,0.6)]", // <--- SIZNING SHADOW
         className
       )}
       {...props} />
@@ -63,7 +65,6 @@ const ContextMenuItem = React.forwardRef(({ className, ...props }, ref) => (
 ))
 ContextMenuItem.displayName = ContextMenuPrimitive.Item.displayName
 
-// TIL TANLASH RADIOSI (CHEF TARAFI MUKAMMAL, SKROLLSIZ)
 const ContextMenuRadioItem = React.forwardRef(({ className, children, ...props }, ref) => (
   <ContextMenuPrimitive.RadioItem
     ref={ref}

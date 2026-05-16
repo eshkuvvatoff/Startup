@@ -31,11 +31,11 @@ import { cn } from "@/lib/utils";
 
 // ESKI KODINGIZDAGI ASOSIY PANEL STILI (min-h-96 olib tashlandi, kontentga qarab o'zi moslashadi)
 const panel =
-  "flex w-64 flex-col gap-1 rounded-xl border-b-2  bg-brand-indigo/20 p-3 shadow-[0_15px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-15px_rgba(0,0,0,0.6)] backdrop-blur-md dark:bg-brand-indigo/10 animate-in fade-in zoom-in-95 duration-200 ring-0 h-auto z-[9999]";
+  "flex w-64 flex-col gap-1 rounded-xl border-b-2  bg-brand-indigo/20 p-3 shadow-[0_5px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-30px_rgba(0,0,0,0.6)] backdrop-blur-sm dark:bg-brand-indigo/10 animate-in fade-in zoom-in-95 duration-200 ring-0 h-auto z-[9999]";
 
 // TIL MENYUSI PANELIDAN HAM min-h BLOCKLARI TO'LIQ TOZALANDI, ENDI IXCHAM OCHILADI
 const subPanel =
-  "w-48 rounded-xl border-b-2 border-border/40 bg-brand-indigo/20 p-2 shadow-[0_15px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-15px_rgba(0,0,0,0.6)] backdrop-blur-md dark:bg-brand-indigo/10 ring-0 h-auto z-[10000]";
+  "w-48 rounded-xl border-b-2 bg-brand-indigo/20 p-2 shadow-[0_6px_30px_-10px_rgba(58,12,163,0.5),0_10px_10px_-30px_rgba(0,0,0,0.6)] backdrop-blur-sm dark:bg-brand-indigo/20 ring-0 h-auto z-[10000]";
 
 const item =
   "flex h-10 w-full items-center gap-3 rounded-lg px-3 text-sm text-foreground outline-none cursor-pointer transition-colors hover:bg-brand-rose focus:bg-brand-rose/40 data-disabled:opacity-40 [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-brand-textc";

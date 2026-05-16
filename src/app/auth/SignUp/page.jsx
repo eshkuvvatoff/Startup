@@ -122,22 +122,22 @@ export default function SignUpPage() {
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
 
-              <div className="space-y-1.5">
-                <label className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+              <div className="space-y-1.5 group">
+                <label className="text-[11px] font-semibold ml-0.5 uppercase tracking-widest text-muted-foreground transition-colors group-focus-within:text-brand-blue dark:group-focus-within:text-brand-cyan">
                   Full Name
                 </label>
                 <input type="text" placeholder="John Doe" className={inputClass} />
               </div>
 
-              <div className="space-y-1.5">
-                <label className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+              <div className="space-y-1.5 group">
+                <label className="text-[11px] font-semibold ml-0.5 uppercase tracking-widest text-muted-foreground transition-colors group-focus-within:text-brand-blue dark:group-focus-within:text-brand-cyan">
                   Email
                 </label>
                 <input type="email" placeholder="name@persona.com" className={inputClass} />
               </div>
 
-              <div className="space-y-1.5">
-                <label className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+              <div className="space-y-1.5 group">
+                <label className="text-[11px] font-semibold ml-0.5 uppercase tracking-widest text-muted-foreground transition-colors group-focus-within:text-brand-blue dark:group-focus-within:text-brand-cyan">
                   Password
                 </label>
 
