@@ -79,6 +79,7 @@
   --border: #dbe3ff;
   --ring: #6366f1;
 
+
   --rose:    #F72585;
   --violet:  #7209B7;
   --indigo:  #3A0CA3;
@@ -114,7 +115,6 @@
   --border: rgba(255,255,255,0.08);
   --ring: #8b5cf6;
 
-
   --brand-rose:    #F72585;
   --brand-violet:  #7209B7;
   --brand-indigo:  #3A0CA3;
@@ -137,6 +137,7 @@ body {
   transition:
     background-color 0.25s ease,
     color 0.25s ease;
+  user-select: none;
 }
 
 @layer utilities {
@@ -177,6 +178,12 @@ body {
 }
 
 @layer base {
+
+  ::-moz-selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-color);
+  }
+
   ::-webkit-scrollbar {
     width: 5px;
   }

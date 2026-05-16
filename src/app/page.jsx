@@ -1,48 +1,27 @@
-import LightPillar from "@/components/lightpillar";
-import Matchs from "@/components/Matchs";
-import PersonalityTest from "@/components/quiz";
-import Link from "next/link";
+import { AuthEntryButtons } from "@/components/auth/auth-buttons";
 
 export default function Home() {
-    return (
-        <main className="relative min-h-screen">
-            {/* <div style={{ 
-                width: '100%', 
-                height: '100vh', 
-                position: 'fixed', 
-                top: 0, 
-                left: 0, 
-                zIndex: -1, 
-                pointerEvents: 'none'
-            }}>
-                <LightPillar
-                    topColor="#5227FF"
-                    bottomColor="#FF9FFC"
-                    intensity={1}
-                    rotationSpeed={0.3}
-                    glowAmount={0.002}
-                    pillarWidth={3}
-                    pillarHeight={0.4}
-                    noiseIntensity={0.5}
-                    pillarRotation={25}
-                    interactive={false}
-                    mixBlendMode="screen"
-                    quality="low"
-                />
-            </div>
+  return (
+    <main className="relative min-h-screen w-full bg-background text-foreground flex items-center justify-center overflow-hidden p-6 transition-colors duration-300">
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-brand-violet/20 dark:bg-brand-violet/30 blur-[100px]" />
+        <div className="absolute -bottom-32 -right-32 w-[450px] h-[450px] rounded-full bg-brand-blue/15 dark:bg-brand-blue/25 blur-[100px]" />
+        <div className="absolute top-1/3 right-1/4 w-[250px] h-[250px] rounded-full bg-brand-rose/10 dark:bg-brand-rose/15 blur-[80px]" />
+      </div>
 
-            <div className="relative z-10 pt-32 flex flex-col gap-20">
-                <section className="container mx-auto">
-                    <PersonalityTest />
-                </section>
-                
-                <section className="container mx-auto">
-                    <Matchs />
-                </section>
-            </div> */}
-            <div>
-                <Link href={"/auth/SignIn"}><h1 className="absolute top-[50%] left-[50%]">Sign in</h1></Link>
-            </div>
-        </main>
-    )
+      <div className="relative z-10 flex flex-col items-center gap-8 text-center max-w-md">
+        <div className="flex flex-col items-center gap-2">
+          <span className="font-saira-stencil text-4xl tracking-[0.25em] bg-gradient-to-b from-foreground via-foreground to-foreground/40 bg-clip-text text-transparent">
+            Persona
+          </span>
+          <span className="w-12 h-px bg-gradient-to-r from-transparent via-brand-violet to-transparent" />
+          <p className="text-sm text-muted-foreground/70 mt-2 tracking-[0.08em] font-light">
+            Demo — choose how to continue
+          </p>
+        </div>
+
+        <AuthEntryButtons />
+      </div>
+    </main>
+  );
 }

@@ -5,6 +5,7 @@ import Footer from "@/components/layouts/footers/page";
 import { cn } from "@/lib/utils";
 import Wrapper from "@/components/wrapper";
 import SmoothScroll from "@/components/smooth-scroll";
+import BlockDevTools from "@/components/block-devtools";
 // import LightPillar from "@/components/lightpillar";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
@@ -17,9 +18,9 @@ export default function RootLayout({ children }) {
           <Header />
           <SmoothScroll>
             <main>{children}</main>
-            
           </SmoothScroll >
           <Footer />
+          <BlockDevTools />
         </Wrapper>
       </body>
     </html>
@@ -31,7 +32,7 @@ export const metadata = {
   title: "Persona",
   description: "Show who you are",
   icons: {
-    icon: '/Logo.png', 
+    icon: '/Logo.png',
     shortcut: '/shortcut-icon.png',
     apple: '/Logo.png',
     other: {

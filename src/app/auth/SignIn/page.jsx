@@ -26,9 +26,9 @@ export default function SignInPage() {
 
       {/* Orbs */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-brand-violet/20 dark:bg-brand-violet/30 blur-[100px]" />
+        <div className="absolute  -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-brand-violet/20 dark:bg-brand-violet/30 blur-[100px]" />
         <div className="absolute -bottom-32 -right-32 w-[450px] h-[450px] rounded-full bg-brand-blue/15 dark:bg-brand-blue/25 blur-[100px]" />
-        <div className="absolute top-1/3 right-1/4 w-[250px] h-[250px] rounded-full bg-brand-rose/10 dark:bg-brand-rose/15 blur-[80px]" />
+        <div className="absolute  top-1/3 right-1/4 w-[250px] h-[250px] rounded-full bg-brand-rose/10 dark:bg-brand-rose/15 blur-[80px]" />
       </div>
 
       <div className="relative z-10 w-full max-w-[420px]">

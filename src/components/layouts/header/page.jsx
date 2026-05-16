@@ -31,7 +31,8 @@ export default function Header() {
   }, [])
 
 
-  const profileImage = null
+  let profileImage = null
+  profileImage = "/profileImage.jpg"
 
   const itemStyle = "group flex flex-col items-center justify-center p-4 cursor-pointer rounded-md transition-all duration-200 hover:bg-primary/10 outline-none"
 
